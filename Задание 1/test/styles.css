@@ -1,0 +1,89 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box;   
+}
+
+
+/* Высота для html и body нужна для работы flex-центрирования */
+html, body{
+    height: 100%;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    color: rgba(251, 248, 243, 0.875);
+    font-size: 24px;
+}
+
+/* Стили для всего тела документа */
+body {
+    background-color: #323131; /* Темно-серый фон */
+    font-family: 'Montserrat', sans-serif; /* Подключите шрифт через Google Fonts! */
+    padding: 20px;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center; /* Центрирует дочерние элементы по горизонтали */
+    flex-direction: column; /* Выстраиваем элементы в колонку */
+}
+
+/* Основное содержимое страницы */
+main{
+    text-align: center;
+    font-weight: 700;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем контент внутри main по вертикали */
+    color: rgba(251, 248, 243, 0.875); /* Кремово-белый цвет с небольшой прозрачностью */
+    align-items: center;            
+}
+.text1{
+    font-size: 48px;
+    font-style: italic;
+}
+.text2{
+    font-size: 26px;
+    font-style: normal;
+}
+
+.button {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    padding: 12px 50px;
+    background: rgba(251, 248, 243, 0.1);
+    color: rgba(251, 248, 243, 0.9);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.BTNanimations{
+    transition: all 0.3s ease;
+}
+
+.BTNanimations:hover {
+    background: rgba(251, 248, 243, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.BTNanimations:active{
+    backdrop-filter: blur(50px);
+    background: rgba(251, 248, 243, 0.4);
+}
+
+/* Подвал сайта */
+
+footer{
+    margin-bottom: 10px; /* Отступ снизу */
+    text-align: center;
+    color: rgba(240, 248, 255, 0.6);  /* Светлый голубоватый цвет с прозрачностью */
+}

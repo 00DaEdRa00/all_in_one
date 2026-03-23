@@ -1,0 +1,110 @@
+@import './styles/common.css';
+
+.page {
+  max-width: 1200px;
+  margin: 24px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 16px;
+}
+
+section {
+  margin: 18px 0;
+}
+
+/* 1. меню */
+.nav {
+  display: flex;
+  gap: 10px;
+  height: 36px;
+}
+
+.nav h1{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  font-size: 1.6rem;
+}
+
+.elements{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.elements a {
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+.elements a:hover {
+  background: var(--color-hover);
+}
+
+
+/* Карточки */
+.cards {
+  display: flex;
+  gap: 16px;
+  align-items: stretch; /* одинаковая высота */
+  flex-wrap: wrap;   
+}
+.card {
+  flex: 1 1 250px; /* рост, сжатие, базовая ширина */
+  padding: 20px;
+  background: var(--color-card);
+  border-radius: 6px;
+  box-shadow: 0 1px 0 var(--shadow-weak) inset;
+  display: flex;
+  flex-direction: column;
+}
+.demo {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+}
+
+.demo-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: calc(100vh - 200px);
+}
+
+/* Карточка по центру */
+.demo-box {
+  display: flex;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-muted);
+  border-radius: 6px;
+  width: 320px;
+  min-height: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Мобильные экраны */
+@media (max-width: 520px) {
+  .nav {
+    gap: 12px;
+  }
+  .cards {
+    gap: 12px;
+  }
+}
+
+/* Кнопка */
+.btn {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  background-color: #df606071;
+  margin: 0;
+  padding: 8px 30px;
+}

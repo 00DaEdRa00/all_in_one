@@ -1,0 +1,98 @@
+@import '/styles/variables.css';
+@import '/styles/common.css';
+
+/* стили главной страницы */
+body {
+  background: #18181a;
+  color: rgb(216, 219, 220);
+  overflow: hidden; /* убираем прокрутку */
+}
+
+.home {
+  display: flex;
+  justify-content: center; /*Центр вертикаль*/
+  flex-direction: column; /*Сохраняем колонку*/
+  align-items: center;/*Центр горизонталь*/
+  min-height: 100vh;/*на весь экран*/
+
+}
+
+
+.page {
+  max-width: 900px;
+  margin: 24px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 16px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+section {
+  margin: 18px 0;
+}
+
+/* Общие вспомогательные стили для демонстрации */
+.demo-box {
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-muted);
+}
+
+/* 1. Навигация */
+.nav {
+  display: flex;
+  gap: 24px;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+.nav a:hover {
+  background: var(--color-hover);
+}
+
+/* 2. Центровка */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+/* 3. Распределение по краям */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+}
+
+/* 4. Карточки товаров */
+.cards {
+  display: flex;
+  gap: 16px;
+  align-items: stretch; /* 5. одинаковая высота карточек */
+  flex-wrap: wrap; /* 6. адаптивные строки */
+}
+.card {
+  flex: 1 1 250px; /* рост, сжатие, базовая ширина */
+  padding: 20px;
+  background: var(--color-card);
+  border-radius: 6px;
+  box-shadow: 0 1px 0 var(--shadow-weak) inset;
+}
+
+
+/* Мобильны экраны */
+@media (max-width: 520px) {
+  .nav {
+    gap: 12px;
+  }
+  .cards {
+    gap: 12px;
+  }
+}

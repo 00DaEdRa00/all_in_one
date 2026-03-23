@@ -1,0 +1,27 @@
+/* Глобальные переменные цвета и тени */
+:root {
+  --color-bg: #18181a;
+  --color-text: rgb(216, 219, 220);
+  --color-text-btn: rgb(216, 219, 220);
+  --color-primary: rgb(34, 34, 36);
+  --color-card: rgb(34, 34, 36);
+  --color-border: rgb(51, 51, 54);
+  --color-hover: rgb(49, 48, 51);
+
+  --color-header: #414243d6;
+  --color-sidebar: #414243d6;
+  --color-content: #414243d6;
+  --color-footer: #414243d6;
+
+  --color-card-bg: #252427;
+  --color-muted: rgb(37, 36, 39);
+
+  --color-page-header: #eef9ff;
+  --color-hero: #fff3e6;
+  --color-features: #e6fff2;
+  --color-cta: #fff0f6;
+  --color-page-footer: #f2f2f6;
+
+  --shadow: 3px 3px 3px rgba(201, 59, 59, 0.448); /** как говорил, лучше не использовать разные форматы цветов, позже покажу, как нам это обойти*/
+  --shadow-weak: rgba(0, 0, 0, 0.04); /** как говорил, лучше не использовать разные форматы цветов, позже покажу, как нам это обойти*/
+}
