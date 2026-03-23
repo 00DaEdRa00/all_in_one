@@ -1,0 +1,17 @@
+.underlining_text{
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    color:#dbdbdb;
+}
+
+.underlining_text::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    bottom: -10px;
+    left: 0;
+    background-color: #ccc;
+}

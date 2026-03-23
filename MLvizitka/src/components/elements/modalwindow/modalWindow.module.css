@@ -1,0 +1,340 @@
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modalBackdrop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modalContent {
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(30, 30, 30, 0.95) 100%);
+  padding: 50px 40px 40px 40px;
+  max-width: 550px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(-30px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid #333;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(123, 98, 252, 0.1),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 4px;
+}
+
+.modalBackdrop.show .modalContent {
+  transform: translateY(0) scale(1);
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #999;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-weight: 300;
+  z-index: 10;
+  padding: 5px;
+  line-height: 1;
+}
+
+.modalCloseButton:hover {
+  background: none;
+  border: none;
+  color: #fff;
+  text-shadow: 
+    0 0 10px rgba(123, 98, 252, 0.8),
+    0 0 20px rgba(123, 98, 252, 0.5),
+    0 0 30px rgba(123, 98, 252, 0.3);
+}
+
+.modalHeader {
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(68, 68, 68, 0.5);
+}
+
+.modalTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.modalIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalIcon {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 10px rgba(123, 98, 252, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.modalIconContainer[data-type="telegram"] .modalIcon {
+  filter: drop-shadow(0 0 10px rgba(88, 170, 255, 0.65));
+}
+
+.modalIconContainer:hover .modalIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.modalIconContainer[data-type="telegram"]:hover .modalIcon {
+  filter: drop-shadow(0 0 20px rgba(34, 158, 217, 0.9));
+}
+
+.modalIconContainer[data-type="discord"]:hover .modalIcon {
+  filter: drop-shadow(0 0 20px rgba(123, 98, 252, 0.8));
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(123, 98, 252, 0.4));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(123, 98, 252, 0.6));
+  }
+}
+
+@keyframes iconPulseTelegram {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.modalIconContainer[data-type="telegram"] {
+  animation: iconPulseTelegram 2s ease-in-out infinite;
+}
+
+.modalTitle {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+}
+
+.modalTitlePrefix {
+  color: #27ca3f;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 8px rgba(39, 202, 63, 0.5);
+  opacity: 0.9;
+}
+
+.modalTitleMain {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(123, 98, 252, 0.5);
+  letter-spacing: 1px;
+}
+
+.modalText {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  color: #ccc;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modalUrl {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(68, 68, 68, 0.5);
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalUrlLabel {
+  color: #27ca3f;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.modalUrlValue {
+  color: #fff;
+  font-size: 14px;
+  word-break: break-all;
+  text-shadow: 0 0 5px rgba(123, 98, 252, 0.3);
+}
+
+.modalActions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.socialButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(30, 30, 30, 0.9) 100%);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1.5px solid rgba(68, 68, 68, 0.8);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  font-size: 16px;
+  border-radius: 2px;
+  font-family: inherit;
+}
+
+.socialButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.socialButton:hover::before {
+  left: 100%;
+}
+
+.socialButton:hover {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(50, 50, 50, 0.9) 100%);
+  transform: translateY(-3px);
+  border-color: var(--accent-color, #7b62fc);
+  box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.4),
+    0 0 20px var(--accent-color, #7b62fc);
+  color: white;
+}
+
+.socialButton[data-type="telegram"]:hover {
+  border-color: #229ED9;
+  box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(34, 158, 217, 0.8),
+    0 0 40px rgba(34, 158, 217, 0.4);
+}
+
+.socialButton[data-type="discord"]:hover {
+  border-color: #5865F2;
+  box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(88, 101, 242, 0.8),
+    0 0 40px rgba(88, 101, 242, 0.4);
+}
+
+.socialButton:active {
+  transform: translateY(-1px);
+}
+
+.socialButtonIcon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(1.2);
+  transition: transform 0.3s ease;
+}
+
+.socialButton:hover .socialButtonIcon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.socialText {
+  position: relative;
+  z-index: 1;
+}
+
+.cancelButton {
+  background: transparent;
+  border: 1px solid rgba(68, 68, 68, 0.6);
+  color: #aaa;
+  padding: 12px 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  font-weight: 500;
+  font-family: inherit;
+  min-width: 200px;
+}
+
+.cancelButton:hover {
+  background: rgba(68, 68, 68, 0.3);
+  border-color: #666;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.cancelButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 40px 25px 30px 25px;
+    max-width: 90%;
+  }
+
+  .modalTitleMain {
+    font-size: 26px;
+  }
+
+  .modalText {
+    font-size: 14px;
+  }
+
+  .socialButton,
+  .cancelButton {
+    min-width: 100%;
+    padding: 14px 30px;
+  }
+}

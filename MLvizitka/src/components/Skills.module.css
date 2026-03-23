@@ -1,0 +1,23 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill_grid{
+    display: grid;
+    gap:20px;
+    margin-top: 30px;
+}
+
+.skill_item{
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 20px;
+  border: 1px solid #333;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.skill_item:hover{
+    transform: translateY(-5px);
+    border-color: #ccc;
+}

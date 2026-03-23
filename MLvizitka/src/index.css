@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+
+  
+  font-family: -apple-system, BlinkMacSystemFont, "cour", 'Courier New', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "cour";
+  src: url("../src/assets/fonts/cour.ttf");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: 'Courier New', source-code-pro, Menlo, Monaco, Consolas, monospace;
+}
+
+
+section{
+  min-height: 100vh;
+  padding:100px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 120px 20px 80px;
+  }
+}
