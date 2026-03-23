@@ -1,0 +1,51 @@
+@import './variables.css';
+
+
+/* Базовые общие стили */
+body {
+  font-family: Segoe UI, Roboto, Arial, sans-serif;
+  padding: 18px;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+.btn {
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+  margin: 0px 8px 0px 8px;
+  padding: 8px 12px;
+  background: var(--color-primary);
+  color: var(--color-text-btn);
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer; /* реакция на кнопку */ 
+  transition: transform .15s ease-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.example {
+  margin: 20px 0;
+  padding: 12px;
+  background: var(--color-card-bg);
+  border-radius: 8px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+h1,
+h2 {
+  margin: 8px 0;
+}
+
+/* Утилитарные/демо-классы */
+.demo-box {
+  padding: 12px;
+  border: 1px solid var(--color-muted);
+  background: var(--color-muted);
+}
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}

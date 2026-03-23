@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do list</title>
+  <link rel="stylesheet" href="/index.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <h1>TDList</h1>
+      <div class="main_buttons">
+        <button class="add_btn" id="add_btn">+</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main_content">
+    <div class="empty" id="empty_state">
+      <p class="starter_text">Добавьте хотя бы одну задачу</p>
+    </div>
+
+    <div class="tasks_container hidden" id="tasksContainer">
+      <h2>Задачи</h2>
+      <ul class="tasks-list" id="tasksList"></ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal">
+      <h3 id="modalTitle">Новая задача</h3>
+      <textarea 
+        id="taskInput" 
+        placeholder="Введите текст задачи..."
+        rows="4"
+      ></textarea>
+      <div class="modal-buttons">
+        <button class="modal-btn cancel-btn" id="cancelBtn">Отмена</button>
+        <button class="modal-btn save-btn" id="saveBtn">Сохранить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/TDL.js"></script>
+</body>
+</html>
